@@ -1,7 +1,9 @@
 # AI DeepDive Handbook
 
-![AI DeepDive](https://img.shields.io/badge/Handbook-AI%20DeepDive-blue?style=flat-square) ![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square) ![Coverage](https://img.shields.io/badge/coverage-unknown-lightgrey?style=flat-square)  
+![AI DeepDive](https://img.shields.io/badge/Handbook-AI%20DeepDive-blue?style=flat-square) ![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square) [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Handbook-success?style=flat-square)](https://saajunaid.github.io/ai-deepdive-handbook/)  
 📘 A compact, single-file interactive handbook that explains modern AI and Large Language Models (LLMs) — from core maths to agentic systems — using visual, runnable animations and concise explanations.
+
+> **🚀 [View Live Handbook →](https://saajunaid.github.io/ai-deepdive-handbook/)**
 
 ## At a Glance 🔎
 
