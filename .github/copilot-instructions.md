@@ -1,4 +1,4 @@
-# AI DeepDive Handbook: Copilot Instructions
+# AI Builders Guide: Copilot Instructions
 
 ## Overview
 This project contains a comprehensive, interactive HTML-based technical handbook for AI and Large Language Models. The handbook covers everything from foundational concepts to advanced agentic AI systems.
@@ -157,15 +157,15 @@ mv v12.html index.html
 
 # 2. Create/update repository
 git add index.html
-git commit -m "Complete AI DeepDive Handbook"
+git commit -m "Complete AI Builders Guide"
 git push origin main
 
 # 3. Enable in Settings → Pages → main branch
 ```
 
 ### URL Structure
-- Repository: github.com/saajunaid/ai-handbook
-- Live site: saajunaid.github.io/ai-handbook
+- Repository: github.com/saajunaid/ai-builders-guide
+- Live site: saajunaid.github.io/ai-builders-guide
 
 ## External Dependencies
 **None!** - Pure HTML/CSS/JavaScript, no external libraries or CDN dependencies.
@@ -189,3 +189,4 @@ git push origin main
 - Maintains professional technical writing style
 - Suitable for portfolio/resume showcase
 - Comprehensive enough for interview preparation
+

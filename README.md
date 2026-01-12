@@ -1,9 +1,9 @@
-# AI DeepDive Handbook
+# AI Builders Guide
 
-![AI DeepDive](https://img.shields.io/badge/Handbook-AI%20DeepDive-blue?style=flat-square) ![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square) [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Handbook-success?style=flat-square)](https://saajunaid.github.io/ai-deepdive-handbook/)  
+![AI Builders Guide](https://img.shields.io/badge/Handbook-AI%20Builders%20Guide-blue?style=flat-square) ![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square) [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Handbook-success?style=flat-square)](https://saajunaid.github.io/ai-builders-guide/)  
 📘 A compact, single-file interactive handbook that explains modern AI and Large Language Models (LLMs) — from core maths to agentic systems — using visual, runnable animations and concise explanations.
 
-> **🚀 [View Live Handbook →](https://saajunaid.github.io/ai-deepdive-handbook/)**
+> **🚀 [View Live Handbook →](https://saajunaid.github.io/ai-builders-guide/)**
 
 ## At a Glance 🔎
 
@@ -41,7 +41,7 @@ You are free to:
 - ✅ Distribute copies
 - ✅ Use in educational settings
 
-**Attribution:** Please credit "AI DeepDive Handbook by Junaid Shaik" when redistributing or adapting this work.
+**Attribution:** Please credit "AI Builders Guide by Junaid Shaik" when redistributing or adapting this work.
 
 ---
 

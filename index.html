@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI DeepDive Handbook - Complete Technical Guide</title>
+    <title>From Transformers to Agents: The AI Builder's Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,34 +15,70 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Work Sans', sans-serif;
             line-height: 1.7;
-            color: #1a1a2e;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: #0a0a0a;
+            background: #ffffff;
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Geometric Neural Network Grid */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(255, 107, 53, 0.05) 25%, rgba(255, 107, 53, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 107, 53, 0.05) 75%, rgba(255, 107, 53, 0.05) 76%, transparent 77%),
+                linear-gradient(90deg, transparent 24%, rgba(255, 107, 53, 0.05) 25%, rgba(255, 107, 53, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 107, 53, 0.05) 75%, rgba(255, 107, 53, 0.05) 76%, transparent 77%);
+            background-size: 50px 50px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Geometric Shapes Background */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.03) 0%, transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 40%);
+            z-index: 0;
+            pointer-events: none;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         header {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            margin-bottom: 30px;
+            background: #0a0a0a;
+            padding: 60px 40px;
+            border-radius: 0;
+            box-shadow: none;
+            margin-bottom: 0;
             text-align: center;
-            animation: slideDown 0.6s ease-out;
+            animation: slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            border-bottom: 6px solid #ff6b35;
+            position: relative;
         }
 
-        @keyframes slideDown {
+        @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-40px);
             }
             to {
                 opacity: 1;
@@ -48,14 +87,23 @@
         }
 
         h1 {
-            font-size: 2.8em;
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 12px;
-            font-weight: 700;
-            animation: fadeIn 0.8s ease-out;
+            font-size: 4em;
+            font-family: 'Work Sans', sans-serif;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 6px;
+            background: #ff6b35;
+            margin: 24px auto 0;
         }
 
         @keyframes fadeIn {
@@ -64,10 +112,13 @@
         }
 
         .subtitle {
-            color: #4a5568;
+            color: #ffffff;
             font-size: 1.2em;
-            margin-bottom: 8px;
-            font-weight: 500;
+            margin-bottom: 16px;
+            font-weight: 400;
+            font-family: 'Work Sans', sans-serif;
+            letter-spacing: 1px;
+            opacity: 0.9;
         }
 
         .nav-pills {
@@ -79,25 +130,31 @@
         }
 
         .nav-pill {
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
-            border: none;
-            border-radius: 10px;
+            padding: 14px 24px;
+            background: #ffffff;
+            color: #0a0a0a;
+            border: 3px solid #0a0a0a;
+            border-radius: 0;
             cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+            font-size: 11px;
+            font-weight: 700;
+            font-family: 'Work Sans', sans-serif;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .nav-pill:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.5);
+            background: #0a0a0a;
+            color: #ffffff;
+            transform: translateY(-3px);
         }
 
         .nav-pill.active {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            background: #ff6b35;
+            border-color: #ff6b35;
+            color: #ffffff;
+            transform: scale(1.05);
         }
 
         .content-wrapper {
@@ -108,55 +165,66 @@
         }
 
         .sidebar {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            background: #ffffff;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: 3px solid #0a0a0a;
             height: fit-content;
             position: sticky;
             top: 20px;
         }
 
         .sidebar h3 {
-            color: #2d3748;
-            margin-bottom: 20px;
-            font-size: 1.1em;
+            background: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px 24px;
+            font-size: 0.9em;
             font-weight: 700;
+            font-family: 'Work Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 6px solid #ff6b35;
         }
 
         .sidebar-link {
             display: block;
-            padding: 12px 16px;
-            color: #4a5568;
+            padding: 16px 24px;
+            color: #0a0a0a;
             text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 6px;
-            transition: all 0.25s ease;
-            font-size: 14px;
-            font-weight: 500;
-            border-left: 3px solid transparent;
+            border-radius: 0;
+            margin: 0;
+            transition: all 0.15s ease;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Work Sans', sans-serif;
+            border-left: 6px solid transparent;
             cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .sidebar-link:hover {
-            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
-            color: #2d3748;
-            border-left-color: #2563eb;
-            transform: translateX(4px);
+            background: #f5f5f5;
+            border-left-color: #ff6b35;
         }
 
         .sidebar-link.active {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
+            background: #0a0a0a;
+            color: #ffffff;
+            border-left-color: #ff6b35;
+            font-weight: 700;
         }
 
         .content {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            padding: 48px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            background: #ffffff;
+            padding: 60px 50px;
+            border-radius: 0;
+            box-shadow: none;
+            border: 3px solid #0a0a0a;
+            border-top: 6px solid #ff6b35;
+            position: relative;
+            margin-top: 30px;
         }
 
         .section {
@@ -180,203 +248,271 @@
         }
 
         h2 {
-            color: #1a202c;
-            font-size: 2.2em;
-            margin-bottom: 24px;
-            border-bottom: 3px solid #2563eb;
-            padding-bottom: 12px;
-            font-weight: 700;
+            color: #0a0a0a;
+            font-size: 1.6em;
+            margin-bottom: 32px;
+            margin-top: 48px;
+            padding-bottom: 20px;
+            font-weight: 800;
+            font-family: 'Work Sans', sans-serif;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            position: relative;
+            border-bottom: 6px solid #ff6b35;
         }
 
         h3 {
-            color: #2d3748;
-            font-size: 1.6em;
-            margin-top: 36px;
-            margin-bottom: 16px;
+            color: #0a0a0a;
+            font-size: 1.3em;
+            margin-top: 40px;
+            margin-bottom: 20px;
             font-weight: 700;
+            font-family: 'Work Sans', sans-serif;
+            letter-spacing: -0.5px;
+            border-left: 6px solid #ff6b35;
+            padding-left: 16px;
         }
 
         h4 {
-            color: #4a5568;
-            font-size: 1.25em;
-            margin-top: 24px;
-            margin-bottom: 12px;
+            color: #0a0a0a;
+            font-size: 1.1em;
+            margin-top: 32px;
+            margin-bottom: 16px;
             font-weight: 600;
+            font-family: 'Work Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .must-know {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border-left: 5px solid #f59e0b;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 24px 0;
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.01); }
+            background: #fff9e6;
+            border: 3px solid #0a0a0a;
+            border-left: 10px solid #ff6b35;
+            padding: 28px 32px;
+            border-radius: 0;
+            margin: 32px 0;
+            box-shadow: 8px 8px 0 rgba(255, 107, 53, 0.15);
+            position: relative;
         }
 
         .must-know::before {
-            content: "⭐ MUST KNOW";
+            content: "⚡ CRITICAL";
             display: block;
-            font-weight: 700;
-            color: #92400e;
-            margin-bottom: 12px;
-            font-size: 1.05em;
+            font-weight: 800;
+            color: #0a0a0a;
+            margin-bottom: 16px;
+            font-size: 0.85em;
+            font-family: 'Work Sans', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .concept-card {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 28px;
-            border-radius: 12px;
-            margin: 24px 0;
-            border-left: 4px solid #2563eb;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 0;
+            margin: 28px 0;
+            border: 2px solid #e0e0e0;
+            border-left: 6px solid #0a0a0a;
+            box-shadow: none;
+            transition: all 0.2s ease;
         }
 
         .concept-card:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
+            border-left-color: #ff6b35;
+            box-shadow: 4px 4px 0 rgba(255, 107, 53, 0.2);
+            transform: translate(-4px, -4px);
         }
 
         .mental-model {
-            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-            padding: 24px;
-            border-radius: 12px;
-            margin: 20px 0;
-            border-left: 4px solid #6366f1;
+            background: #f0f0f0;
+            padding: 28px;
+            border-radius: 0;
+            margin: 24px 0;
+            border: 2px solid #0a0a0a;
+            box-shadow: 6px 6px 0 rgba(10, 10, 10, 0.1);
         }
 
         .mental-model::before {
-            content: "💡 Mental Model";
+            content: "💡 CONCEPT";
             display: block;
-            font-weight: 700;
-            color: #4338ca;
-            margin-bottom: 12px;
+            font-weight: 800;
+            color: #0a0a0a;
+            margin-bottom: 14px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .tools-box {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            padding: 24px;
-            border-radius: 12px;
-            margin: 20px 0;
-            border-left: 4px solid #3b82f6;
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 0;
+            margin: 24px 0;
+            border: 2px solid #0a0a0a;
+            border-top: 6px solid #ff6b35;
+            box-shadow: none;
         }
 
         .tools-box::before {
-            content: "🛠️ Tools & Technologies";
+            content: "🛠 TOOLS";
             display: block;
-            font-weight: 700;
-            color: #1e40af;
-            margin-bottom: 12px;
+            font-weight: 800;
+            color: #0a0a0a;
+            margin-bottom: 14px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .example-box {
-            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-            padding: 24px;
-            border-radius: 12px;
-            margin: 20px 0;
-            border-left: 4px solid #10b981;
+            background: #f5f5f5;
+            padding: 28px;
+            border-radius: 0;
+            margin: 24px 0;
+            border: 2px solid #0a0a0a;
+            border-left: 6px solid #ff6b35;
+            box-shadow: none;
         }
 
         .example-box::before {
-            content: "📝 Example";
+            content: "➤ EXAMPLE";
             display: block;
-            font-weight: 700;
-            color: #065f46;
-            margin-bottom: 12px;
+            font-weight: 800;
+            color: #0a0a0a;
+            margin-bottom: 14px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .faq-box {
-            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
-            padding: 24px;
-            border-radius: 12px;
-            margin: 20px 0;
-            border-left: 4px solid #ec4899;
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 0;
+            margin: 24px 0;
+            border: 3px solid #0a0a0a;
+            box-shadow: 6px 6px 0 #ff6b35;
         }
 
         .faq-box::before {
-            content: "❓ FAQ";
+            content: "? FAQ";
             display: block;
-            font-weight: 700;
-            color: #9f1239;
-            margin-bottom: 12px;
+            font-weight: 800;
+            color: #ff6b35;
+            margin-bottom: 14px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         code {
-            background: #2d3748;
-            color: #e2e8f0;
-            padding: 3px 8px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #ff6b35;
+            padding: 4px 10px;
+            border-radius: 0;
+            font-family: 'Space Mono', monospace;
             font-size: 0.9em;
+            font-weight: 500;
         }
 
         pre {
-            background: #1e293b;
-            color: #e2e8f0;
-            padding: 24px;
-            border-radius: 10px;
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 32px;
+            border-radius: 0;
             overflow-x: auto;
-            margin: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            margin: 28px 0;
+            box-shadow: none;
+            border: 3px solid #0a0a0a;
+            border-left: 10px solid #ff6b35;
+            position: relative;
+            max-width: 100%;
         }
 
         pre code {
             background: none;
             padding: 0;
+            border: none;
+            color: #ffffff;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 24px 0;
-            background: white;
-            border-radius: 10px;
+            margin: 32px 0;
+            background: #ffffff;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: none;
+            border: 3px solid #0a0a0a;
         }
 
         th {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
-            padding: 16px;
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 20px;
             text-align: left;
-            font-weight: 600;
+            font-weight: 700;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 4px solid #ff6b35;
         }
 
         td {
-            padding: 14px 16px;
-            border-bottom: 1px solid #e2e8f0;
+            padding: 18px 20px;
+            border-bottom: 2px solid #e0e0e0;
+            color: #0a0a0a;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 500;
         }
 
         tr:hover {
-            background: #f7fafc;
+            background: #f9f9f9;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
         }
 
         ul, ol {
-            margin-left: 24px;
-            margin-top: 12px;
-            margin-bottom: 12px;
+            margin-left: 32px;
+            margin-top: 16px;
+            margin-bottom: 16px;
         }
 
         li {
-            margin-bottom: 10px;
-            color: #4a5568;
+            margin-bottom: 14px;
+            color: #0a0a0a;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        li::marker {
+            color: #ff6b35;
+            font-weight: 700;
         }
 
         .diagram {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border: 2px solid #e2e8f0;
-            font-family: monospace;
+            background: #f5f5f5;
+            padding: 28px;
+            border-radius: 0;
+            margin: 28px 0;
+            border: 3px solid #0a0a0a;
+            font-family: 'Space Mono', monospace;
             overflow-x: auto;
+            color: #0a0a0a;
+            box-shadow: none;
+            font-weight: 500;
         }
 
         .animated-diagram {
@@ -388,21 +524,23 @@
             position: fixed;
             bottom: 32px;
             right: 32px;
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
+            background: #ff6b35;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #0a0a0a;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
-            transition: all 0.3s ease;
+            box-shadow: 6px 6px 0 #0a0a0a;
+            transition: all 0.2s ease;
             opacity: 0;
             pointer-events: none;
             font-size: 24px;
             z-index: 1000;
+            font-weight: 700;
         }
 
         .back-to-top.visible {
@@ -411,18 +549,34 @@
         }
 
         .back-to-top:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 28px rgba(30, 64, 175, 0.6);
+            transform: translate(-6px, -6px);
+            box-shadow: 12px 12px 0 #0a0a0a;
         }
 
         .progress-bar {
             position: fixed;
             top: 0;
             left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
+            height: 6px;
+            background: #ff6b35;
             z-index: 1000;
             transition: width 0.3s ease;
+        }
+
+        /* />junAiD Branding Watermark */
+        .watermark {
+            position: fixed;
+            bottom: 24px;
+            right: 110px;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            color: #0a0a0a;
+            opacity: 0.25;
+            z-index: 999;
+            font-weight: 700;
+            letter-spacing: 0px;
+            pointer-events: none;
+            user-select: none;
         }
 
         @media (max-width: 768px) {
@@ -469,30 +623,33 @@
         .tooltip {
             position: relative;
             cursor: help;
-            border-bottom: 1px dotted #2563eb;
-            color: #1e40af;
-            font-weight: 500;
+            border-bottom: 2px solid #ff6b35;
+            color: #0a0a0a;
+            font-weight: 600;
         }
 
         .tooltip .tooltiptext {
             visibility: hidden;
             width: max-content;
             max-width: 300px;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: #f8fafc;
+            background: #0a0a0a;
+            color: #ffffff;
             text-align: center;
-            border-radius: 8px;
-            padding: 8px 12px;
+            border-radius: 0;
+            border: 3px solid #ff6b35;
+            padding: 12px 16px;
             position: absolute;
             z-index: 1000;
             bottom: 125%;
             left: 50%;
             transform: translateX(-50%);
             opacity: 0;
-            transition: opacity 0.3s, visibility 0.3s;
+            transition: opacity 0.2s, visibility 0.2s;
             font-size: 0.85em;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 4px 4px 0 #ff6b35;
             white-space: nowrap;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 600;
         }
 
         .tooltip .tooltiptext::after {
@@ -500,10 +657,10 @@
             position: absolute;
             top: 100%;
             left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
+            margin-left: -8px;
+            border-width: 8px;
             border-style: solid;
-            border-color: #0f172a transparent transparent transparent;
+            border-color: #ff6b35 transparent transparent transparent;
         }
 
         .tooltip:hover .tooltiptext {
@@ -921,25 +1078,28 @@
 </head>
 <body>
     <div class="progress-bar" id="progressBar"></div>
+    <div class="watermark">&#47;&gt;@junAiD</div>
     
     <div class="container">
         <header>
-            <h1>🧠 AI DeepDive Handbook</h1>
-            <p class="subtitle">Complete Technical Guide: Zero to Agentic AI</p>
-            <p style="color: #1f2021;">Curated by: jun<span style="font-weight: 700; color: #e406b4; font-size: 1.1em;">ai</span>d sh<span style="font-weight: 700; color:#e406b4; font-size: 1.1em;">ai</span>k | </em> 🤖 | Last Updated: January 2026</p>
+            <h1>🧠 From Transformers to Agents</h1>
+            <p class="subtitle">The AI Builder's Guide</p>
+            <p style="color: #ffffff; font-family: 'Work Sans', sans-serif; font-size: 0.95em; font-weight: 500; letter-spacing: 0.5px;">Curated by: jun<span style="font-weight: 800; color: #ff6b35; font-size: 1.15em;">ai</span>d sh<span style="font-weight: 800; color: #ff6b35; font-size: 1.15em;">ai</span>k | 🤖 | Last Updated: January 2026</p>
             
             <div class="nav-pills">
-                <button class="nav-pill active" onclick="showSection('foundations')">🔧 Foundations</button>
-                <button class="nav-pill" onclick="showSection('architecture')">🏗️ Architecture</button>
-                <button class="nav-pill" onclick="showSection('training')">🎓 Training</button>
-                <button class="nav-pill" onclick="showSection('deployment')">📦 Deployment</button>
-                <button class="nav-pill" onclick="showSection('optimization')">⚡ Optimization</button>
-                <button class="nav-pill" onclick="showSection('advanced')">🚀 Advanced</button>
-                <button class="nav-pill" onclick="showSection('tools')">🛠️ Tools</button>
-                <button class="nav-pill" onclick="showSection('practical')">💻 Practical</button>
-                <button class="nav-pill" onclick="showSection('keytopics')">🎯 Key Topics</button>
-                <button class="nav-pill" onclick="showSection('glossary')">📚 Glossary</button>
-                <button class="nav-pill" onclick="showSection('economics')">💰 Economics</button>
+                <button class="nav-pill active" onclick="showSection('foundations')">🔧 FOUNDATIONS</button>
+                <button class="nav-pill" onclick="showSection('architecture')">🏗️ ARCHITECTURE</button>
+                <button class="nav-pill" onclick="showSection('training')">🎓 TRAINING</button>
+                <button class="nav-pill" onclick="showSection('deployment')">📦 DEPLOYMENT</button>
+                <button class="nav-pill" onclick="showSection('optimization')">⚡ OPTIMIZATION</button>
+                <button class="nav-pill" onclick="showSection('advanced')">🚀 ADVANCED</button>
+                <button class="nav-pill" onclick="showSection('tools')">🛠️ TOOLS</button>
+                <button class="nav-pill" onclick="showSection('practical')">💻 PRACTICAL</button>
+                <button class="nav-pill" onclick="showSection('keytopics')">🎯 KEY TOPICS</button>
+                <button class="nav-pill" onclick="showSection('glossary')">📚 GLOSSARY</button>
+                <button class="nav-pill" onclick="showSection('economics')">💰 ECONOMICS</button>
+                <button class="nav-pill" onclick="showSection('practice')">🎯 PRACTICE</button>
+                <button class="nav-pill" onclick="showSection('templates')">📄 TEMPLATES</button>
             </div>
             
             <div class="search-container" style="margin: 20px auto; max-width: 600px;">
@@ -965,6 +1125,8 @@
                 <div class="sidebar-link" onclick="showSection('keytopics')">🎯 Key Topics to Survive</div>
                 <div class="sidebar-link" onclick="showSection('glossary')">📚 Glossary & FAQs</div>
                 <div class="sidebar-link" onclick="showSection('economics')">💰 Economics of AI</div>
+                <div class="sidebar-link" onclick="showSection('practice')">🎯 Hands-On Practice</div>
+                <div class="sidebar-link" onclick="showSection('templates')">📄 Templates</div>
             </aside>
 
             <main class="content">
@@ -3107,13 +3269,13 @@ Base model (Llama-2-7B) + Adapter C (Translation)
                             </ul>
                         </div>
 
-                        <div style="margin: 20px 0; padding: 20px; background: rgba(59, 130, 246, 0.05); border-radius: 8px; text-align: center;">
-                            <p style="font-weight: 600; color: #1e40af; margin-bottom: 10px;">
-                                <em>Interactive: LoRA Adapter Injection</em>
+                        <div style="margin: 20px 0; padding: 28px; background: #ffffff; border: 3px solid #0a0a0a; text-align: center;">
+                            <p style="font-weight: 700; color: #0a0a0a; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9em;">
+                                Interactive: LoRA Adapter Injection
                             </p>
-                            <button onclick="animateLoRA()" style="padding: 10px 20px; background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3); margin-bottom: 15px;">Show LoRA</button>
-                            <div id="loraContainer" class="lora-container" style="padding: 20px; background: linear-gradient(135deg, #1e293b, #334155); border-radius: 8px; min-height: 200px;"></div>
-                            <p style="font-size: 0.85em; color: #64748b; margin-top: 10px;">See how tiny adapters customize massive models efficiently</p>
+                            <button onclick="animateLoRA()" style="padding: 12px 28px; background: #ff6b35; color: #ffffff; border: 3px solid #0a0a0a; border-radius: 0; cursor: pointer; font-weight: 700; box-shadow: 4px 4px 0 #0a0a0a; margin-bottom: 20px; font-family: 'Work Sans', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 12px;">Show LoRA</button>
+                            <div id="loraContainer" class="lora-container" style="padding: 24px; background: #f5f5f5; border: 2px solid #0a0a0a; min-height: 200px;"></div>
+                            <p style="font-size: 0.85em; color: #0a0a0a; margin-top: 10px; font-weight: 500;">See how tiny adapters customize massive models efficiently</p>
                         </div>
 
                         <h4>LoRA Hyperparameters</h4>
@@ -4285,11 +4447,254 @@ memory = VectorStoreMemory(vectorstore=vectorstore)
 # Automatically stores and retrieves relevant context</pre>
                         </div>
                     </div>
+
+                    <div class="concept-card">
+                        <h3>6.6 Agent Skills: Modular Capabilities</h3>
+                        
+                        <div class="must-know">
+                            <strong>What are Skills?</strong> Skills are self-contained, reusable modules that teach agents how to perform specific tasks. Think of them as expertise packages that agents can load and apply when needed - like hiring a specialist for a specific job.
+                        </div>
+
+                        <div class="mental-model">
+                            <strong>The Skill Concept:</strong>
+                            <p>Instead of cramming all instructions into one massive prompt, Skills let you organize agent capabilities into focused, documented modules. Each skill defines what it does, when to use it, and how to execute it.</p>
+                        </div>
+
+                        <h4>How Skills Work</h4>
+                        <div class="diagram">
+<pre>
+<strong>Skill Activation Flow:</strong>
+
+User Request: "Extract data from this PDF"
+       ↓
+┌────────────────────────────────────────────┐
+│  Agent analyzes task                       │
+│  Matches keywords: "PDF", "extract"        │
+└────────────────────────────────────────────┘
+       ↓
+┌────────────────────────────────────────────┐
+│  Loads relevant skill:                     │
+│  "pdf-extraction" skill                    │
+│  (Only when needed!)                       │
+└────────────────────────────────────────────┘
+       ↓
+┌────────────────────────────────────────────┐
+│  Follows skill instructions:               │
+│  1. Parse PDF structure                    │
+│  2. Extract text/tables                    │
+│  3. Format output                          │
+└────────────────────────────────────────────┘
+       ↓
+Result: Structured data from PDF
+
+<strong>Progressive Disclosure:</strong>
+Startup: Load skill metadata (~100 tokens)
+Activated: Load full instructions (~1-5K tokens)
+On-demand: Load references/scripts as needed
+</pre>
+                        </div>
+
+                        <h4>Where Skills are Defined</h4>
+                        <div class="example-box">
+                            <strong>Directory Structure:</strong>
+                            <pre>
+.github/skills/                 ← Skills repository
+├── pdf-extraction/
+│   ├── SKILL.md               ← Main skill definition (required)
+│   ├── scripts/
+│   │   └── extract.py         ← Executable scripts
+│   ├── references/
+│   │   └── REFERENCE.md       ← Detailed docs
+│   └── assets/
+│       └── template.pdf       ← Example files
+├── frontend-design/
+│   └── SKILL.md
+└── code-review/
+    └── SKILL.md
+
+<strong>SKILL.md Format:</strong>
+---
+name: pdf-extraction
+description: Extracts text and tables from PDF files, fills forms, merges documents. Use when working with PDFs or when user mentions document extraction.
+license: MIT
+metadata:
+  author: yourorg
+  version: "1.0"
+---
+
+# PDF Extraction Skill
+
+## When to Use
+- User uploads or mentions a PDF file
+- Task involves extracting data from documents
+- Need to process multiple PDFs
+
+## Instructions
+1. Identify PDF file path
+2. Use pypdf2 or pdfplumber for extraction
+3. Parse text, tables, and images
+4. Return structured data
+
+## Examples
+[Detailed examples here...]
+</pre>
+                        </div>
+
+                        <h4>Instructions vs MCP vs Skills: Key Differences</h4>
+                        <table>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Instructions</th>
+                                <th>MCP (Model Context Protocol)</th>
+                                <th>Skills</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Purpose</strong></td>
+                                <td>General behavior & rules</td>
+                                <td>Connect to external resources</td>
+                                <td>Teach specific capabilities</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scope</strong></td>
+                                <td>Global (all interactions)</td>
+                                <td>Per-connection (resource access)</td>
+                                <td>Task-specific (loaded on-demand)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Loading</strong></td>
+                                <td>Always loaded at startup</td>
+                                <td>Configured, persistent connection</td>
+                                <td>Progressive disclosure (lazy load)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Format</strong></td>
+                                <td>Text file (.md, .txt)</td>
+                                <td>JSON config + Server process</td>
+                                <td>YAML frontmatter + Markdown</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Example Use</strong></td>
+                                <td>"Always be concise"<br/>"Use metric units"</td>
+                                <td>Access GitHub API<br/>Query database<br/>Read local files</td>
+                                <td>PDF extraction<br/>Code review<br/>Design generation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Token Cost</strong></td>
+                                <td>Loaded every request</td>
+                                <td>Minimal (just API calls)</td>
+                                <td>Only when activated</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reusability</strong></td>
+                                <td>Per-project</td>
+                                <td>Cross-project (if server running)</td>
+                                <td>Highly reusable across projects</td>
+                            </tr>
+                        </table>
+
+                        <div class="mental-model">
+                            <strong>Mental Model:</strong>
+                            <ul>
+                                <li><strong>Instructions</strong> = Agent's personality & base rules (e.g., ".github/copilot-instructions.md")</li>
+                                <li><strong>MCP</strong> = Agent's access to external tools/data (e.g., database connection, file system)</li>
+                                <li><strong>Skills</strong> = Agent's learnable expertise modules (e.g., how to review code, design UIs)</li>
+                            </ul>
+                            <p><strong>Combined:</strong> Instructions set behavior → MCP provides resources → Skills define how to use them for specific tasks</p>
+                        </div>
+
+                        <h4>Using Skills</h4>
+                        <div class="tools-box">
+                            <strong>1. In VS Code with GitHub Copilot:</strong>
+                            <pre># Place skills in .github/skills/
+# Copilot auto-discovers and loads them
+
+.github/
+└── skills/
+    ├── fronend-design/
+    │   └── SKILL.md
+    └── code-review/
+        └── SKILL.md
+
+# Agent automatically activates skills based on task matching</pre>
+
+                            <strong>2. With Claude Desktop:</strong>
+                            <pre># Create skills directory
+mkdir -p ~/.claude/skills
+
+# Add skill definition
+cat &gt; ~/.claude/skills/pdf-extraction/SKILL.md &lt;&lt;'EOF'
+---
+name: pdf-extraction
+description: Extract text and data from PDF files
+---
+[Instructions here...]
+EOF
+
+# Claude loads skills from configured directory</pre>
+
+                            <strong>3. Programmatically:</strong>
+                            <pre>from agentskills import SkillRegistry
+
+# Load skills from directory
+registry = SkillRegistry.load(".github/skills/")
+
+# Agent matches task to skill
+skill = registry.match_task("Review this code for bugs")
+instructions = skill.load_instructions()
+
+# Agent follows skill instructions
+result = agent.execute(task, instructions)</pre>
+                        </div>
+
+                        <div class="example-box">
+                            <strong>Example: Activating Frontend Design Skill</strong>
+                            <pre>
+User: "Design a modern dashboard for analytics"
+
+Agent thinking:
+1. Keywords matched: "design", "dashboard"
+2. Loading skill: frontend-design
+3. Skill instructions loaded:
+   - Use modern frameworks
+   - Follow design principles
+   - Avoid generic AI aesthetics
+   - Create cohesive color schemes
+
+Agent: [Follows frontend-design skill instructions]
+       [Creates custom design with unique typography]
+       [Implements Bauhaus-inspired layout]
+       [Delivers polished dashboard code]
+</pre>
+                        </div>
+
+                        <h4>Best Practices for Skills</h4>
+                        <div class="must-know">
+                            <ul>
+                                <li><strong>Keep Skills Focused:</strong> One skill = one capability (not "general-helper")</li>
+                                <li><strong>Rich Descriptions:</strong> Include keywords that help agents find the right skill</li>
+                                <li><strong>Progressive Disclosure:</strong> Keep SKILL.md under 500 lines, move details to references/</li>
+                                <li><strong>Clear Examples:</strong> Show inputs/outputs, edge cases, common patterns</li>
+                                <li><strong>Naming Convention:</strong> Use lowercase-with-hyphens (e.g., "pdf-extraction", not "PDF_Extraction")</li>
+                            </ul>
+                        </div>
+
+                        <h4>Further Exploration</h4>
+                        <div class="tools-box">
+                            <strong>Official Resources:</strong>
+                            <ul>
+                                <li><strong>Specification:</strong> <a href="https://agentskills.io/specification" target="_blank">https://agentskills.io/specification</a></li>
+                                <li><strong>What are Skills:</strong> <a href="https://agentskills.io/what-are-skills" target="_blank">https://agentskills.io/what-are-skills</a></li>
+                                <li><strong>Claude Skills Docs:</strong> <a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" target="_blank">https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview</a></li>
+                                <li><strong>Integration Guide:</strong> <a href="https://agentskills.io/integrate-skills" target="_blank">https://agentskills.io/integrate-skills</a></li>
+                                <li><strong>GitHub Reference:</strong> <a href="https://github.com/agentskills/agentskills" target="_blank">https://github.com/agentskills/agentskills</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- SECTION 6.6: TOOLS ECOSYSTEM -->
+                <!-- SECTION 6.7: TOOLS ECOSYSTEM -->
                 <div id="tools" class="section">
-                    <h2>🛠️ 6.6. Essential Tools Ecosystem</h2>
+                    <h2>🛠️ 6.7. Essential Tools Ecosystem</h2>
                     
                     <div class="must-know">
                         <strong>Why This Matters:</strong> The <span class="tooltip">AI<span class="tooltiptext">Artificial Intelligence</span></span> landscape has hundreds of tools. This section focuses on the most popular, actively maintained tools that professionals actually use in production.
@@ -7439,6 +7844,1478 @@ print(f"Running cost: ${cost_per_hour:.2f}/hour")</pre>
                         </div>
                     </div>
                 </div>
+
+                <!-- SECTION 10: HANDS-ON PRACTICE -->
+                <div id="practice" class="section">
+                    <h2>🎯 10. Hands-On Practice</h2>
+                    
+                    <div class="must-know">
+                        <strong>Learning by Doing:</strong> Theory is essential, but practice cements understanding. This curated collection of hands-on playbooks provides real-world projects to build your AI skills from fundamentals to production deployment.
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>Practice Playbooks</h3>
+                        
+                        <div class="mental-model">
+                            <strong>How to Use This Section:</strong>
+                            <p>Each playbook is a complete, guided project with code, datasets, and step-by-step instructions. Check off items as you complete them to track your progress.</p>
+                        </div>
+
+                        <div style="background: #ffffff; border: 3px solid #0a0a0a; padding: 32px; margin: 24px 0;">
+                            <h4 style="color: #0a0a0a; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; margin-bottom: 24px; border-bottom: 3px solid #ff6b35; padding-bottom: 12px;">📋 Practice Checklist</h4>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #f5f5f5; border: 2px solid #0a0a0a; margin-bottom: 12px; cursor: pointer; transition: all 0.2s;">
+                                    <input type="checkbox" style="margin-top: 4px; width: 20px; height: 20px; cursor: pointer; accent-color: #ff6b35;">
+                                    <div>
+                                        <div style="font-weight: 700; color: #0a0a0a; font-size: 15px; margin-bottom: 4px;">
+                                            Build a RAG Application from Scratch
+                                        </div>
+                                        <div style="font-size: 13px; color: #0a0a0a; opacity: 0.8; margin-bottom: 8px;">
+                                            Implement Retrieval-Augmented Generation with vector databases, embeddings, and semantic search. Use LangChain and build a document Q&A system.
+                                        </div>
+                                        <a href="https://learn.nextwork.org/projects/ai-devops-api?track=high&utm_source=youtube" target="_blank" style="display: inline-block; padding: 8px 16px; background: #ff6b35; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border: 2px solid #0a0a0a; box-shadow: 2px 2px 0 #0a0a0a;">
+                                            Start Playbook →
+                                        </a>
+                                    </div>
+                                </label>
+
+                                <label style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #f5f5f5; border: 2px solid #0a0a0a; margin-bottom: 12px; cursor: pointer;">
+                                    <input type="checkbox" style="margin-top: 4px; width: 20px; height: 20px; cursor: pointer; accent-color: #ff6b35;">
+                                    <div>
+                                        <div style="font-weight: 700; color: #0a0a0a; font-size: 15px; margin-bottom: 4px;">
+                                            Fine-Tune Your First LLM with LoRA
+                                        </div>
+                                        <div style="font-size: 13px; color: #0a0a0a; opacity: 0.8; margin-bottom: 8px;">
+                                            Hands-on guide to parameter-efficient fine-tuning. Train a custom model on your domain data using QLoRA, PEFT, and HuggingFace Transformers.
+                                        </div>
+                                        <span style="display: inline-block; padding: 8px 16px; background: #e0e0e0; color: #0a0a0a; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border: 2px solid #0a0a0a;">
+                                            Coming Soon
+                                        </span>
+                                    </div>
+                                </label>
+
+                                <label style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #f5f5f5; border: 2px solid #0a0a0a; margin-bottom: 12px; cursor: pointer;">
+                                    <input type="checkbox" style="margin-top: 4px; width: 20px; height: 20px; cursor: pointer; accent-color: #ff6b35;">
+                                    <div>
+                                        <div style="font-weight: 700; color: #0a0a0a; font-size: 15px; margin-bottom: 4px;">
+                                            Deploy LLMs with vLLM & Ollama
+                                        </div>
+                                        <div style="font-size: 13px; color: #0a0a0a; opacity: 0.8; margin-bottom: 8px;">
+                                            Set up production inference servers using vLLM and Ollama. Learn model quantization, batching, and performance optimization techniques.
+                                        </div>
+                                        <span style="display: inline-block; padding: 8px 16px; background: #e0e0e0; color: #0a0a0a; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border: 2px solid #0a0a0a;">
+                                            Coming Soon
+                                        </span>
+                                    </div>
+                                </label>
+
+                                <label style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #f5f5f5; border: 2px solid #0a0a0a; margin-bottom: 12px; cursor: pointer;">
+                                    <input type="checkbox" style="margin-top: 4px; width: 20px; height: 20px; cursor: pointer; accent-color: #ff6b35;">
+                                    <div>
+                                        <div style="font-weight: 700; color: #0a0a0a; font-size: 15px; margin-bottom: 4px;">
+                                            Build an AI Agent with LangChain
+                                        </div>
+                                        <div style="font-size: 13px; color: #0a0a0a; opacity: 0.8; margin-bottom: 8px;">
+                                            Create autonomous agents using ReAct pattern, tool calling, and memory systems. Implement multi-step reasoning and task completion.
+                                        </div>
+                                        <span style="display: inline-block; padding: 8px 16px; background: #e0e0e0; color: #0a0a0a; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border: 2px solid #0a0a0a;">
+                                            Coming Soon
+                                        </span>
+                                    </div>
+                                </label>
+
+                                <label style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #f5f5f5; border: 2px solid #0a0a0a; margin-bottom: 12px; cursor: pointer;">
+                                    <input type="checkbox" style="margin-top: 4px; width: 20px; height: 20px; cursor: pointer; accent-color: #ff6b35;">
+                                    <div>
+                                        <div style="font-weight: 700; color: #0a0a0a; font-size: 15px; margin-bottom: 4px;">
+                                            Implement MCP Servers for Tool Integration
+                                        </div>
+                                        <div style="font-size: 13px; color: #0a0a0a; opacity: 0.8; margin-bottom: 8px;">
+                                            Build custom Model Context Protocol servers to connect AI models to external tools, databases, and APIs. Create reusable integrations.
+                                        </div>
+                                        <span style="display: inline-block; padding: 8px 16px; background: #e0e0e0; color: #0a0a0a; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border: 2px solid #0a0a0a;">
+                                            Coming Soon
+                                        </span>
+                                    </div>
+                                </label>
+
+                                <label style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: #f5f5f5; border: 2px solid #0a0a0a; cursor: pointer;">
+                                    <input type="checkbox" style="margin-top: 4px; width: 20px; height: 20px; cursor: pointer; accent-color: #ff6b35;">
+                                    <div>
+                                        <div style="font-weight: 700; color: #0a0a0a; font-size: 15px; margin-bottom: 4px;">
+                                            AI DevOps API - Build Production-Ready AI Apps
+                                        </div>
+                                        <div style="font-size: 13px; color: #0a0a0a; opacity: 0.8; margin-bottom: 8px;">
+                                            Learn to build, deploy, and scale AI applications with proper DevOps practices. Covers API design, containerization, monitoring, and CI/CD pipelines.
+                                        </div>
+                                        <span style="display: inline-block; padding: 8px 16px; background: #e0e0e0; color: #0a0a0a; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border: 2px solid #0a0a0a;">
+                                            Coming Soon
+                                        </span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="must-know">
+                            <strong>💡 Pro Tip:</strong> Don't just follow tutorials passively. Modify the code, experiment with parameters, break things and fix them. Real learning happens when you struggle through problems and find solutions.
+                        </div>
+
+                        <div class="example-box">
+                            <strong>Suggested Learning Path:</strong>
+                            <ol style="line-height: 1.8;">
+                                <li><strong>Start with RAG:</strong> Understand how to enhance LLMs with external knowledge</li>
+                                <li><strong>Fine-tune a Model:</strong> Customize LLMs for your specific needs</li>
+                                <li><strong>Deploy Inference:</strong> Learn to run models efficiently</li>
+                                <li><strong>Build an Agent:</strong> Create autonomous AI systems</li>
+                                <li><strong>Master MCP:</strong> Connect agents to real-world tools and data</li>
+                                <li><strong>Production DevOps:</strong> Build production-ready habits and best practices</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 11: TEMPLATES -->
+                <div id="templates" class="section">
+                    <h2>📄 11. Templates & Configuration Examples</h2>
+                    
+                    <div class="must-know">
+                        <strong>Ready-to-Use Templates:</strong> Copy-paste templates for Instructions, MCP configurations, and Skills. Customize these for your specific needs and start building AI agents immediately.
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>Quick Reference: Key Differences</h3>
+                        <div class="must-know">
+                            <table>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>File Location</th>
+                                    <th>Loading</th>
+                                    <th>Purpose</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>Instructions</strong></td>
+                                    <td>.github/copilot-instructions.md<br/>~/.claude/instructions/</td>
+                                    <td>Always loaded</td>
+                                    <td>General behavior & rules</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MCP</strong></td>
+                                    <td>claude_desktop_config.json<br/>~/.config/mcp/</td>
+                                    <td>Persistent connection</td>
+                                    <td>External resource access</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Skills</strong></td>
+                                    <td>.github/skills/<br/>~/.claude/skills/</td>
+                                    <td>On-demand (lazy)</td>
+                                    <td>Specific task expertise</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>📝 Instructions Templates</h3>
+                        
+                        <div class="mental-model">
+                            <strong>What are Instructions?</strong> Instruction files define your agent's personality, behavior rules, and general guidelines. They're always loaded and shape how the agent responds to every request.
+                        </div>
+
+                        <h4>Template 1: GitHub Copilot Instructions (.github/copilot-instructions.md)</h4>
+                        <div class="tools-box">
+                            <pre><strong># Basic Copilot Instructions</strong>
+---
+description: General coding assistant with best practices
+---
+
+## Code Style
+- Use clear, descriptive variable names
+- Follow language-specific conventions (PEP 8 for Python, etc.)
+- Prefer composition over inheritance
+- Write self-documenting code with minimal comments
+
+## Response Format
+- Keep explanations concise unless asked for details
+- Provide complete, runnable code examples
+- Include error handling in production code
+- Use TODO comments for incomplete sections
+
+## Best Practices
+- Security: Never hardcode credentials
+- Performance: Optimize for readability first, then performance
+- Testing: Suggest test cases for complex functions
+- Documentation: Include docstrings for public APIs</pre>
+                        </div>
+
+                        <h4>Template 2: Advanced Copilot Instructions (Project-Specific)</h4>
+                        <div class="tools-box">
+                            <pre><strong># AI SaaS Platform - Copilot Instructions</strong>
+---
+description: Instructions for AI-powered SaaS application development
+applyTo: '**'
+---
+
+## Project Context
+This is a multi-tenant AI SaaS platform built with:
+- Backend: Python FastAPI + PostgreSQL + Redis
+- Frontend: React + TypeScript + TailwindCSS
+- AI: OpenAI GPT-4, Anthropic Claude, LangChain
+- Infrastructure: Docker, Kubernetes, AWS
+
+## Code Standards
+- **Python**: Use type hints, async/await, Pydantic models
+- **TypeScript**: Strict mode, prefer interfaces over types
+- **API**: RESTful design, versioned endpoints (/api/v1/)
+- **Database**: Use SQLAlchemy ORM, migrations with Alembic
+
+## Security Requirements
+- All API endpoints require JWT authentication
+- Validate and sanitize user inputs
+- Use parameterized queries (no string concatenation)
+- Rate limit AI API calls (100 req/min per user)
+- Encrypt sensitive data at rest
+
+## AI Integration Guidelines
+- Implement retry logic for API failures (exponential backoff)
+- Cache frequent AI responses in Redis (30-min TTL)
+- Stream responses for long-running AI tasks
+- Track token usage per user for billing
+
+## Response Format
+- Provide complete file paths when creating new files
+- Include necessary imports at the top
+- Add inline comments for complex business logic
+- Suggest relevant tests for new features</pre>
+                        </div>
+
+                        <h4>Template 3: Claude Desktop Instructions (.claude/instructions/claude.md)</h4>
+                        <div class="tools-box">
+                            <pre><strong># Claude Desktop Custom Instructions</strong>
+
+## Communication Style
+- Be direct and concise
+- Use technical terminology appropriately
+- Provide examples when explaining complex concepts
+- Ask clarifying questions before making assumptions
+
+## Code Preferences
+- **Language**: Prefer Python 3.11+ for new projects
+- **Frameworks**: FastAPI for APIs, React for frontends
+- **Style**: Follow official style guides strictly
+- **Comments**: Only when necessary for complex logic
+
+## Project Structure
+- Use modular architecture (separate concerns)
+- Follow domain-driven design principles
+- Create dedicated folders: /src, /tests, /docs, /scripts
+- Use .env files for configuration (never commit secrets)
+
+## Testing
+- Write tests for all public functions
+- Use pytest for Python, Jest for JavaScript
+- Aim for 80%+ code coverage
+- Include integration tests for critical paths
+
+## Documentation
+- README.md must have: Setup, Usage, Contributing, License
+- API endpoints need OpenAPI/Swagger documentation
+- Complex algorithms need inline explanations
+- Update docs when code changes
+
+## Workflow
+- Create feature branches (feature/name)
+- Write descriptive commit messages
+- Request code reviews before merging
+- Use CI/CD for automated testing and deployment</pre>
+                        </div>
+
+                        <h4>Template 4: Data Science Focused Instructions</h4>
+                        <div class="tools-box">
+                            <pre><strong># Data Science & ML Instructions</strong>
+
+## Data Analysis Approach
+- Start with exploratory data analysis (EDA)
+- Visualize distributions, correlations, outliers
+- Document assumptions about data quality
+- Report missing values and handling strategy
+
+## Code Standards
+- Use pandas for data manipulation
+- Prefer vectorized operations over loops
+- Include memory usage estimates for large datasets
+- Save intermediate results for reproducibility
+
+## Visualization
+- Use matplotlib/seaborn for static plots
+- Plotly for interactive visualizations
+- Always label axes and include titles
+- Use colorblind-friendly palettes
+
+## Machine Learning
+- Split data before any preprocessing (train/val/test)
+- Document feature engineering steps
+- Track experiments with MLflow or W&B
+- Report metrics: accuracy, precision, recall, F1, AUC
+- Include confusion matrices for classification
+- Check for data leakage
+
+## Model Deployment
+- Save models with version control (e.g., model_v1.pkl)
+- Include preprocessing pipeline with model
+- Document expected input format
+- Provide inference time estimates
+- Implement monitoring for model drift</pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>🔌 MCP (Model Context Protocol) Templates</h3>
+                        
+                        <div class="mental-model">
+                            <strong>What is MCP?</strong> MCP servers provide standardized interfaces for AI models to access external resources (files, databases, APIs). Configure them in your AI client (Claude Desktop, custom apps) to extend agent capabilities.
+                        </div>
+
+                        <h4>Template 1: Claude Desktop MCP Configuration</h4>
+                        <div class="tools-box">
+                            <pre><strong>File: ~/Library/Application Support/Claude/claude_desktop_config.json (Mac)</strong>
+<strong>File: %APPDATA%/Claude/claude_desktop_config.json (Windows)</strong>
+
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/yourname/Documents/projects"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your_token_here"
+      }
+    },
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://user:pass@localhost:5432/mydb"
+      ]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "your_brave_api_key"
+      }
+    },
+    "slack": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-slack"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "xoxb-your-token",
+        "SLACK_TEAM_ID": "T01234567"
+      }
+    }
+  }
+}</pre>
+                        </div>
+
+                        <h4>Template 2: GitHub Copilot MCP Configuration</h4>
+                        <div class="tools-box">
+                            <pre><strong>GitHub Copilot with MCP Support</strong>
+
+GitHub Copilot doesn't currently have native MCP configuration like Claude Desktop.
+However, you can integrate MCP-like functionality through:
+
+<strong>Option 1: Custom VS Code Extension</strong>
+Create a VS Code extension that bridges Copilot with MCP servers:
+
+// extension.ts
+import * as vscode from 'vscode';
+import { MCPClient } from '@modelcontextprotocol/sdk/client/index.js';
+
+export function activate(context: vscode.ExtensionContext) {
+    const client = new MCPClient({
+        name: "vscode-mcp-bridge",
+        version: "1.0.0"
+    });
+    
+    // Connect to MCP server
+    await client.connect({
+        command: "npx",
+        args: ["@modelcontextprotocol/server-filesystem", workspace.rootPath]
+    });
+    
+    // Register commands available to Copilot context
+    context.subscriptions.push(
+        vscode.commands.registerCommand('mcp.query', async (query) => {
+            const result = await client.callTool('search_files', { query });
+            return result;
+        })
+    );
+}
+
+<strong>Option 2: Workspace Context via .vscode/settings.json</strong>
+// .vscode/settings.json
+{
+  "github.copilot.advanced": {
+    "contextFiles": [
+      ".github/copilot-instructions.md",
+      "docs/**/*.md"
+    ],
+    "embeddings": {
+      "enabled": true,
+      "provider": "local"
+    }
+  }
+}
+
+<strong>Option 3: Use GitHub Copilot Workspace Agent (Beta)</strong>
+GitHub Copilot Workspace has experimental support for tool calling.
+Configure in .github/copilot-workspace.yml:
+
+tools:
+  - name: filesystem
+    type: mcp
+    config:
+      server: "@modelcontextprotocol/server-filesystem"
+      args: ["${workspaceFolder}"]
+  
+  - name: github-api
+    type: mcp
+    config:
+      server: "@modelcontextprotocol/server-github"
+      env:
+        GITHUB_TOKEN: "${env:GITHUB_TOKEN}"
+
+<strong>Best Practice: Use Skills + Instructions</strong>
+Until native MCP support arrives, use Agent Skills pattern:
+- Place skills in .github/skills/
+- Instructions in .github/copilot-instructions.md
+- Copilot auto-discovers and uses them contextually</pre>
+                        </div>
+
+                        <h4>Template 3: Custom MCP Server (TypeScript)</h4>
+                        <div class="tools-box">
+                            <pre><strong>// custom-database-server.ts</strong>
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import {
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+} from "@modelcontextprotocol/sdk/types.js";
+import { Pool } from "pg";
+
+const pool = new Pool({
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT || "5432"),
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+});
+
+const server = new Server(
+  {
+    name: "custom-database-server",
+    version: "1.0.0",
+  },
+  {
+    capabilities: {
+      tools: {},
+    },
+  }
+);
+
+// List available tools
+server.setRequestHandler(ListToolsRequestSchema, async () => {
+  return {
+    tools: [
+      {
+        name: "query_database",
+        description: "Execute a SQL query on the database",
+        inputSchema: {
+          type: "object",
+          properties: {
+            query: {
+              type: "string",
+              description: "SQL query to execute",
+            },
+          },
+          required: ["query"],
+        },
+      },
+      {
+        name: "list_tables",
+        description: "List all tables in the database",
+        inputSchema: {
+          type: "object",
+          properties: {},
+        },
+      },
+    ],
+  };
+});
+
+// Handle tool calls
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const { name, arguments: args } = request.params;
+
+  try {
+    if (name === "query_database") {
+      const result = await pool.query(args.query);
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(result.rows, null, 2),
+          },
+        ],
+      };
+    } else if (name === "list_tables") {
+      const result = await pool.query(`
+        SELECT table_name 
+        FROM information_schema.tables 
+        WHERE table_schema = 'public'
+      `);
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(result.rows.map(r => r.table_name)),
+          },
+        ],
+      };
+    }
+    throw new Error(`Unknown tool: ${name}`);
+  } catch (error) {
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Error: ${error.message}`,
+        },
+      ],
+      isError: true,
+    };
+  }
+});
+
+async function main() {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+}
+
+main().catch(console.error);</pre>
+                        </div>
+
+                        <h4>Template 4: MCP Server with Resources (Python)</h4>
+                        <div class="tools-box">
+                            <pre><strong># mcp_document_server.py</strong>
+import json
+import os
+from mcp.server import Server, NotificationOptions
+from mcp.server.models import InitializationOptions
+import mcp.server.stdio
+import mcp.types as types
+
+server = Server("document-server")
+
+# Define resources (read-only data sources)
+@server.list_resources()
+async def handle_list_resources() -> list[types.Resource]:
+    docs_dir = os.getenv("DOCS_PATH", "./documents")
+    resources = []
+    
+    for filename in os.listdir(docs_dir):
+        if filename.endswith((".md", ".txt")):
+            resources.append(
+                types.Resource(
+                    uri=f"doc:///{filename}",
+                    name=filename,
+                    description=f"Document: {filename}",
+                    mimeType="text/plain"
+                )
+            )
+    
+    return resources
+
+@server.read_resource()
+async def handle_read_resource(uri: types.AnyUrl) -> str:
+    # Parse URI: doc:///filename.md
+    path = str(uri).replace("doc:///", "")
+    docs_dir = os.getenv("DOCS_PATH", "./documents")
+    file_path = os.path.join(docs_dir, path)
+    
+    with open(file_path, 'r') as f:
+        return f.read()
+
+# Define tools (actions the model can take)
+@server.list_tools()
+async def handle_list_tools() -> list[types.Tool]:
+    return [
+        types.Tool(
+            name="search_documents",
+            description="Search for text across all documents",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "Search query"
+                    }
+                },
+                "required": ["query"]
+            }
+        )
+    ]
+
+@server.call_tool()
+async def handle_call_tool(
+    name: str, arguments: dict | None
+) -> list[types.TextContent]:
+    if name == "search_documents":
+        query = arguments.get("query", "")
+        results = []
+        docs_dir = os.getenv("DOCS_PATH", "./documents")
+        
+        for filename in os.listdir(docs_dir):
+            if filename.endswith((".md", ".txt")):
+                with open(os.path.join(docs_dir, filename), 'r') as f:
+                    content = f.read()
+                    if query.lower() in content.lower():
+                        results.append(f"Found in {filename}")
+        
+        return [
+            types.TextContent(
+                type="text",
+                text=json.dumps(results)
+            )
+        ]
+    
+    raise ValueError(f"Unknown tool: {name}")
+
+async def main():
+    async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
+        await server.run(
+            read_stream,
+            write_stream,
+            InitializationOptions(
+                server_name="document-server",
+                server_version="1.0.0",
+                capabilities=server.get_capabilities(
+                    notification_options=NotificationOptions(),
+                    experimental_capabilities={},
+                ),
+            ),
+        )
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())</pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>🎯 Agent Skills Templates</h3>
+                        
+                        <div class="mental-model">
+                            <strong>What are Skills?</strong> Skills are modular capabilities that agents load on-demand. Each skill is a directory with a SKILL.md file defining when and how to use that expertise.
+                        </div>
+
+                        <h4>Template 1: PDF Extraction Skill</h4>
+                        <div class="tools-box">
+                            <pre><strong>File: .github/skills/pdf-extraction/SKILL.md</strong>
+---
+name: pdf-extraction
+description: Extracts text, tables, and metadata from PDF files. Use when working with PDF documents, forms, or when user mentions document extraction, PDF processing, or data parsing from PDFs.
+license: MIT
+metadata:
+  author: yourorg
+  version: "1.0"
+---
+
+# PDF Extraction Skill
+
+## When to Use This Skill
+- User uploads or mentions a PDF file
+- Task involves extracting text or data from documents
+- Need to process multiple PDFs in batch
+- Converting PDF forms to structured data
+- Extracting tables from PDF reports
+
+## Prerequisites
+- Python 3.8+ installed
+- Required packages: pypdf2, pdfplumber, tabula-py
+
+## Instructions
+
+### 1. Text Extraction
+Use `pdfplumber` for reliable text extraction:
+
+```python
+import pdfplumber
+
+with pdfplumber.open("document.pdf") as pdf:
+    full_text = ""
+    for page in pdf.pages:
+        full_text += page.extract_text()
+    print(full_text)
+```
+
+### 2. Table Extraction
+For tables, use `pdfplumber.extract_tables()`:
+
+```python
+with pdfplumber.open("report.pdf") as pdf:
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            # table is a list of lists
+            for row in table:
+                print(row)
+```
+
+### 3. Metadata Extraction
+Use `pypdf2` for metadata:
+
+```python
+from pypdf2 import PdfReader
+
+reader = PdfReader("document.pdf")
+metadata = reader.metadata
+print(f"Author: {metadata.author}")
+print(f"Title: {metadata.title}")
+print(f"Pages: {len(reader.pages)}")
+```
+
+## Common Issues
+- **Scanned PDFs**: Text extraction won't work - need OCR (tesseract)
+- **Complex Layouts**: May need manual positioning with coordinates
+- **Protected PDFs**: Check if file has restrictions before processing
+
+## Output Format
+Return extracted data as:
+- Plain text for simple extraction
+- JSON for structured data
+- CSV for tables
+- Markdown for formatted documents
+
+## Example Usage
+```python
+# Complete extraction workflow
+import pdfplumber
+import json
+
+def extract_pdf_data(pdf_path):
+    with pdfplumber.open(pdf_path) as pdf:
+        data = {
+            "pages": len(pdf.pages),
+            "text": "",
+            "tables": []
+        }
+        
+        for page in pdf.pages:
+            data["text"] += page.extract_text() + "\\n\\n"
+            data["tables"].extend(page.extract_tables())
+        
+        return data
+
+result = extract_pdf_data("report.pdf")
+print(json.dumps(result, indent=2))
+```</pre>
+                        </div>
+
+                        <h4>Template 2: Frontend Design Skill</h4>
+                        <div class="tools-box">
+                            <pre><strong>File: .github/skills/frontend-design/SKILL.md</strong>
+---
+name: frontend-design
+description: Creates modern, visually distinctive web interfaces avoiding generic AI aesthetics. Use when designing websites, web apps, landing pages, or any visual components.
+license: MIT
+---
+
+# Frontend Design Skill
+
+## When to Use
+- User asks to design or build a website/webapp
+- Creating UI components, pages, or applications
+- Redesigning existing interfaces
+- Need creative, polished, production-ready code
+
+## Core Principles
+
+### 1. Avoid Generic AI Aesthetics
+- ❌ Don't use: border-radius: 12px, rgba colors, Poppins font, purple-blue gradients
+- ✅ Instead: Unique combinations, unexpected typography, cohesive themes
+
+### 2. Typography First
+- Choose 2-3 fonts max (heading + body + mono)
+- Use Google Fonts or system fonts
+- Examples:
+  - Modern: Inter + Fira Code
+  - Geometric: Work Sans + Space Mono  
+  - Elegant: Playfair Display + Source Sans Pro
+
+### 3. Color Systems
+- Pick a distinct palette (not default blue/purple)
+- Use high contrast for accessibility
+- Examples:
+  - Bauhaus: Black + White + Orange accent
+  - Retro: Cream + Brown + Mustard
+  - Cyberpunk: Neon green + Dark purple + Hot pink
+
+### 4. Layout Patterns
+- CSS Grid for main layouts
+- Flexbox for components
+- Minimal border-radius (0-4px) for sharp designs
+- Box shadows for depth: 4px 4px 0 (offset, no blur)
+
+## Design Workflow
+
+1. **Understand Requirements**
+   - Ask about target audience, brand personality
+   - Clarify content type (dashboard, landing page, app)
+
+2. **Choose Design Direction**
+   - Bauhaus: Geometric, primary colors, sans-serif
+   - Brutalist: Raw, monospace, asymmetric
+   - Swiss: Grid-based, minimal, Helvetica
+   - Memphis: Colorful, geometric patterns, playful
+   - Neubrutalism: Bold borders, playful shadows, vibrant colors
+   - Glassmorphism: Frosted glass effect, backdrop-blur, soft shadows
+   - Y2K/Retro-futurism: Chrome effects, nostalgic 2000s aesthetic
+   - Dark Mode Minimal: Deep blacks, subtle grays, accent pops
+
+3. **Implement Structure**
+   ```html
+   <style>
+     :root {
+       --primary: #yourcolor;
+       --accent: #accentcolor;
+       --bg: #background;
+       --text: #textcolor;
+     }
+     
+     body {
+       font-family: 'YourFont', sans-serif;
+       color: var(--text);
+       background: var(--bg);
+     }
+   </style>
+   ```
+
+4. **Add Distinctive Elements**
+   - Custom shapes (not just rectangles)
+   - Unique button styles
+   - Creative hover effects
+   - Consistent spacing system
+
+## Design Theme Examples
+
+### 1. Bauhaus (Current Handbook Theme)
+**Colors:** Black (#0a0a0a), White (#ffffff), Orange (#ff6b35)
+**Typography:** Work Sans, Space Mono
+**Characteristics:** Geometric shapes, zero border-radius, offset shadows
+
+```css
+.bauhaus-button {
+  background: #ff6b35;
+  color: #ffffff;
+  border: 3px solid #0a0a0a;
+  border-radius: 0;
+  padding: 12px 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 4px 4px 0 #0a0a0a;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.bauhaus-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #0a0a0a;
+}
+
+.bauhaus-card {
+  background: #ffffff;
+  border: 3px solid #0a0a0a;
+  padding: 32px;
+  box-shadow: none;
+}
+```
+
+### 2. Neubrutalism
+**Colors:** Vibrant primaries with heavy black borders
+**Typography:** Bold sans-serif (DM Sans, Space Grotesk)
+**Characteristics:** Thick borders, offset shadows, playful rotations
+
+```css
+.neubrutalist-card {
+  background: #ffd93d;
+  border: 4px solid #000000;
+  padding: 24px;
+  box-shadow: 8px 8px 0 #000000;
+  transform: rotate(-1deg);
+  transition: all 0.2s;
+}
+
+.neubrutalist-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 12px 12px 0 #000000;
+}
+
+.neubrutalist-button {
+  background: #00f5d4;
+  color: #000000;
+  border: 3px solid #000000;
+  padding: 16px 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #000000;
+}
+```
+
+### 3. Glassmorphism
+**Colors:** Translucent layers, soft pastels
+**Typography:** SF Pro, Inter, Outfit
+**Characteristics:** Backdrop blur, transparency, subtle shadows
+
+```css
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-button {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+```
+
+### 4. Brutalist
+**Colors:** Raw concrete gray, black, white
+**Typography:** Monospace (Courier, IBM Plex Mono)
+**Characteristics:** Asymmetric layouts, raw HTML look, minimal styling
+
+```css
+.brutalist-container {
+  background: #f0f0f0;
+  border: 1px solid #000000;
+  font-family: 'Courier New', monospace;
+  padding: 0;
+}
+
+.brutalist-header {
+  background: #000000;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.brutalist-button {
+  background: none;
+  border: 2px solid #000000;
+  padding: 8px 16px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.brutalist-button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+```
+
+### 5. Y2K Retro-Futurism
+**Colors:** Chrome silvers, electric blues, hot pinks
+**Typography:** Orbitron, Exo 2, Audiowide
+**Characteristics:** Metallic effects, gradients, nostalgia
+
+```css
+.y2k-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 0 40px rgba(102, 126, 234, 0.6),
+              inset 0 0 20px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.y2k-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.y2k-button {
+  background: linear-gradient(90deg, #00f5ff, #ff00ff);
+  border: none;
+  border-radius: 50px;
+  padding: 14px 32px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(255, 0, 255, 0.5);
+  letter-spacing: 2px;
+}
+```
+
+### 6. Dark Mode Minimal
+**Colors:** Deep blacks, subtle grays, single accent color
+**Typography:** Inter, SF Pro, System UI
+**Characteristics:** High contrast, generous whitespace, subtle animations
+
+```css
+:root {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent: #00ff88;
+}
+
+.dark-minimal-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 32px;
+  transition: border-color 0.3s;
+}
+
+.dark-minimal-card:hover {
+  border-color: var(--accent);
+}
+
+.dark-minimal-button {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.dark-minimal-button:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+```
+
+### 7. Swiss International
+**Colors:** Red accent on black/white grid
+**Typography:** Helvetica, Neue Haas Grotesk
+**Characteristics:** Perfect grid alignment, mathematical spacing
+
+```css
+.swiss-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.swiss-card {
+  background: #ffffff;
+  border: 1px solid #000000;
+  padding: 40px;
+  grid-column: span 4;
+}
+
+.swiss-heading {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px 0;
+}
+
+.swiss-accent {
+  color: #ff0000;
+  border-left: 4px solid #ff0000;
+  padding-left: 20px;
+}
+```
+
+### 8. Memphis Design
+**Colors:** Pastels + Bright primaries
+**Typography:** Rounded sans-serif (Nunito, Quicksand)
+**Characteristics:** Geometric shapes, patterns, playful asymmetry
+
+```css
+.memphis-card {
+  background: #fff;
+  border: 3px solid #000;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.memphis-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: #ffd93d;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.memphis-card::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 60px solid #ff6b9d;
+  z-index: 0;
+}
+
+.memphis-pattern {
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 10px, #00d4ff 10px, #00d4ff 12px),
+    repeating-linear-gradient(-45deg, transparent, transparent 10px, #ff6b9d 10px, #ff6b9d 12px);
+}
+```
+
+## Implementation Checklist
+- [ ] Choose typography (2-3 fonts max)
+- [ ] Define color palette (primary, accent, background, text)
+- [ ] Set CSS custom properties for consistency
+- [ ] Implement responsive breakpoints
+- [ ] Add hover states and transitions
+- [ ] Test accessibility (contrast ratios)
+- [ ] Optimize for performance
+
+## Examples
+
+## Implementation Checklist
+- [ ] Choose typography (2-3 fonts max)
+- [ ] Define color palette (primary, accent, background, text)
+- [ ] Set CSS custom properties for consistency
+- [ ] Implement responsive breakpoints
+- [ ] Add hover states and transitions
+- [ ] Test accessibility (contrast ratios)
+- [ ] Optimize for performance
+
+## Output Quality Standards
+- Valid HTML5 semantics
+- Responsive (mobile-first)
+- Accessible (WCAG AA minimum)
+- Cross-browser compatible
+- Optimized assets (lazy loading images)
+
+## Reference Links
+- Color palettes: coolors.co, colorhunt.co
+- Typography: fonts.google.com
+- Inspiration: dribbble.com, behance.net
+- Bauhaus: bauhaus-movement.com
+- Neubrutalism: brutalist-web.design
+- Glassmorphism: glassmorphism.com</pre>
+                        </div>
+
+                        <h4>Template 3: Code Review Skill</h4>
+                        <div class="tools-box">
+                            <pre><strong>File: .github/skills/code-review/SKILL.md</strong>
+---
+name: code-review
+description: Performs comprehensive code reviews checking for bugs, security issues, performance problems, and best practices. Use when reviewing code, PRs, or auditing codebases.
+---
+
+# Code Review Skill
+
+## When to Use
+- User asks to review code or a pull request
+- Analyzing code for bugs or vulnerabilities
+- Checking code quality and adherence to standards
+- Suggesting improvements or refactoring
+
+## Review Checklist
+
+### 1. Correctness
+- ✅ Does the code do what it's supposed to?
+- ✅ Are edge cases handled?
+- ✅ Are errors caught and handled properly?
+- ✅ Is the logic sound and free of bugs?
+
+### 2. Security
+- ❌ SQL injection vulnerabilities?
+- ❌ XSS (Cross-Site Scripting) risks?
+- ❌ Hardcoded credentials or secrets?
+- ❌ Insecure dependencies?
+- ❌ Missing input validation?
+- ❌ Improper authentication/authorization?
+
+### 3. Performance
+- Inefficient algorithms (O(n²) when O(n) possible)?
+- Unnecessary database queries (N+1 problem)?
+- Memory leaks or excessive allocations?
+- Missing indexes on database queries?
+- Unoptimized loops or recursion?
+
+### 4. Readability & Maintainability
+- Clear variable/function names?
+- Appropriate comments (why, not what)?
+- DRY principle followed (Don't Repeat Yourself)?
+- SOLID principles adhered to?
+- Consistent code style?
+
+### 5. Testing
+- Are there unit tests?
+- Edge cases covered?
+- Integration tests for critical paths?
+- Mocking done properly?
+
+## Review Format
+
+```markdown
+## Code Review Summary
+
+**Overall Assessment:** [APPROVE / REQUEST CHANGES / COMMENT]
+
+**Strengths:**
+- [What's done well]
+
+**Critical Issues:**
+- [Security/bugs that must be fixed]
+
+**Suggestions:**
+- [Improvements for quality/performance]
+
+**Detailed Comments:**
+
+File: `path/to/file.py`
+Line 42: [Specific issue and solution]
+```
+
+## Example Review
+
+```markdown
+## Code Review for `user_api.py`
+
+**Overall:** REQUEST CHANGES
+
+**Critical Issues:**
+1. **SQL Injection Risk (Line 15)**
+   ```python
+   # ❌ Vulnerable
+   query = f"SELECT * FROM users WHERE id = {user_id}"
+   
+   # ✅ Fixed
+   query = "SELECT * FROM users WHERE id = %s"
+   cursor.execute(query, (user_id,))
+   ```
+
+2. **Missing Authentication (Line 28)**
+   - DELETE endpoint has no auth check
+   - Add @require_auth decorator
+
+**Suggestions:**
+1. **Performance (Line 45)**: N+1 query problem
+   - Use JOIN instead of loop queries
+   - Potential 10x speedup
+
+2. **Code Quality (Line 60)**: 
+   - Extract complex logic into separate function
+   - Improves testability
+
+**Minor:**
+- Add type hints for better IDE support
+- Consider using Pydantic for validation
+```
+
+## Common Patterns to Flag
+
+### Anti-Patterns
+```python
+# ❌ Catching all exceptions
+try:
+    risky_operation()
+except:
+    pass  # Silent failure!
+
+# ❌ Mutable default arguments
+def add_item(item, items=[]):
+    items.append(item)  # Bug: shared across calls!
+
+# ❌ Using assert for validation
+assert user.is_admin, "Not admin"  # Disabled in production!
+```
+
+### Best Practices
+```python
+# ✅ Specific exception handling
+try:
+    risky_operation()
+except SpecificError as e:
+    logger.error(f"Operation failed: {e}")
+    raise
+
+# ✅ None as default
+def add_item(item, items=None):
+    if items is None:
+        items = []
+    items.append(item)
+
+# ✅ Proper validation
+if not user.is_admin:
+    raise PermissionError("Admin access required")
+```</pre>
+                        </div>
+
+                        <h4>Template 4: Log Analysis Skill</h4>
+                        <div class="tools-box">
+                            <pre><strong>File: .github/skills/log-analysis/SKILL.md</strong>
+---
+name: log-analysis
+description: Analyzes application logs to identify errors, performance issues, and patterns. Use when debugging applications, investigating incidents, or monitoring system health.
+---
+
+# Log Analysis Skill
+
+## When to Use
+- Debugging application errors
+- Investigating performance issues
+- Monitoring system health
+- Post-incident analysis
+- Identifying usage patterns
+
+## Analysis Workflow
+
+### 1. Initial Assessment
+- Log volume and time range
+- Error rate and severity distribution
+- Identify critical vs informational
+
+### 2. Error Analysis
+```python
+import re
+from collections import Counter
+
+def analyze_errors(log_file):
+    errors = []
+    with open(log_file) as f:
+        for line in f:
+            if 'ERROR' in line or 'FATAL' in line:
+                errors.append(line)
+    
+    # Extract error types
+    error_types = [re.search(r'\\w+Error|\\w+Exception', e).group() 
+                   for e in errors if re.search(r'\\w+Error|\\w+Exception', e)]
+    
+    return Counter(error_types).most_common()
+```
+
+### 3. Performance Metrics
+- Response time distribution
+- Slow queries (> 1 second)
+- Memory usage spikes
+- Database connection pool exhaustion
+
+### 4. Pattern Detection
+- Unusual traffic patterns
+- Repeated failures from same source
+- Cascading failures
+- Time-based patterns (traffic spikes)
+
+## Output Format
+
+```markdown
+# Log Analysis Report
+
+**Period:** [Start] to [End]  
+**Total Entries:** [Count]  
+**Error Rate:** [X%]
+
+## Summary
+- [Key findings]
+
+## Top Issues
+1. **DatabaseConnectionError (450 occurrences)**
+   - Peak: 2024-01-12 14:30-15:00
+   - Root cause: Connection pool exhausted
+   - Recommendation: Increase pool size from 10 to 25
+
+2. **SlowQuery (120 occurrences)**
+   - Average: 3.2s
+   - Query: SELECT * FROM orders JOIN ...
+   - Recommendation: Add index on orders.user_id
+
+## Performance Metrics
+- P50 response time: 120ms
+- P95 response time: 850ms  
+- P99 response time: 2.1s (investigate!)
+
+## Recommendations
+1. [Immediate actions]
+2. [Short-term improvements]
+3. [Long-term architecture changes]
+```</pre>
+                        </div>
+
+                        <h4>More Skill Templates</h4>
+                        <div class="example-box">
+                            <strong>Additional Skills to Create:</strong>
+                            <ul>
+                                <li><strong>ppt-generation</strong>: Create PowerPoint presentations from outlines</li>
+                                <li><strong>backend-design</strong>: API design, database schema, system architecture</li>
+                                <li><strong>webpage-review</strong>: Audit websites for UX, accessibility, SEO, performance</li>
+                                <li><strong>data-visualization</strong>: Create charts and dashboards from data</li>
+                                <li><strong>api-testing</strong>: Test REST APIs, generate test cases, validate responses</li>
+                                <li><strong>documentation-writer</strong>: Generate technical docs, API references, user guides</li>
+                            </ul>
+                            <p><strong>Pattern:</strong> Each skill should have clear when-to-use triggers, step-by-step instructions, code examples, and common pitfalls to avoid.</p>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
@@ -7583,18 +9460,18 @@ print(f"Running cost: ${cost_per_hour:.2f}/hour")</pre>
             
             // Display results
             if (matches.length > 0) {
-                let resultsHTML = `<strong style="color: #1e40af;">${totalMatches} matches found in ${matches.length} sections:</strong><br/><div style="margin-top: 8px;">`;
+                let resultsHTML = `<strong style="color: #ff6b35; font-size: 15px;">${totalMatches} matches found in ${matches.length} sections:</strong><br/><div style="margin-top: 12px;">`;
                 matches.forEach(match => {
-                    resultsHTML += `<div style="margin: 4px 0; padding: 6px 10px; background: rgba(30, 64, 175, 0.05); border-radius: 4px;">
+                    resultsHTML += `<div style="margin: 6px 0; padding: 10px 14px; background: #ffffff; border: 2px solid #0a0a0a; border-left: 6px solid #ff6b35;">
                                      <a href="#" onclick="showSectionById('${match.id}'); return false;" 
-                                        style="color: #1e40af; text-decoration: none; font-weight: 500;">
-                                        📄 ${match.title} <span style="color: #64748b; font-weight: normal;">(${match.count} matches)</span>
+                                        style="color: #0a0a0a; text-decoration: none; font-weight: 600;">
+                                        📄 ${match.title} <span style="color: #666666; font-weight: normal; font-size: 13px;">(${match.count} matches)</span>
                                      </a></div>`;
                 });
                 resultsHTML += '</div>';
                 searchResults.innerHTML = resultsHTML;
             } else {
-                searchResults.innerHTML = `<em>No matches found for "${query}"</em>`;
+                searchResults.innerHTML = `<em style="color: #0a0a0a;">No matches found for "${query}"</em>`;
             }
         }
         
@@ -7875,23 +9752,29 @@ print(f"Running cost: ${cost_per_hour:.2f}/hour")</pre>
             if (!container) return;
             
             container.innerHTML = `
-                <div style="text-align: center; margin-bottom: 15px; color: #e2e8f0; font-weight: 600;">
-                    <strong>Fine-Tuning with LoRA</strong>
+                <div style="text-align: center; margin-bottom: 15px; color: #0a0a0a; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 13px;">
+                    Fine-Tuning with LoRA
                 </div>
                 <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="lora-base" style="width: 140px; height: 140px; background: linear-gradient(135deg, #3b82f6, #2563eb); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 14px; text-align: center; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);">
-                        Base Model<br/><span style="font-size: 18px;">175B</span><br/>params
+                    <div class="lora-base" style="width: 140px; height: 140px; background: #3b82f6; border: 3px solid #0a0a0a; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: bold; color: #ffffff; font-size: 13px; text-align: center; box-shadow: 4px 4px 0 #0a0a0a; line-height: 1.4;">
+                        <div>Base Model</div>
+                        <div style="font-size: 28px; font-weight: 800; margin: 4px 0;">175B</div>
+                        <div>params</div>
                     </div>
-                    <div style="font-size: 32px; color: #e2e8f0; font-weight: bold;">+</div>
-                    <div class="lora-adapter" style="width: 80px; height: 80px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 12px; text-align: center; opacity: 0; animation: loraFadeIn 1s 0.5s forwards; box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);">
-                        LoRA<br/><span style="font-size: 16px;">0.5B</span>
+                    <div style="font-size: 32px; color: #0a0a0a; font-weight: bold;">+</div>
+                    <div class="lora-adapter" style="width: 100px; height: 100px; background: #ef4444; border: 3px solid #0a0a0a; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: bold; color: #ffffff; font-size: 11px; text-align: center; box-shadow: 4px 4px 0 #0a0a0a;">
+                        <div style="font-weight: 700;">LoRA</div>
+                        <div style="font-weight: 700;">Adapter</div>
+                        <div style="font-size: 16px; font-weight: 800; margin-top: 4px;">0.5B</div>
                     </div>
-                    <div style="font-size: 32px; color: #e2e8f0; font-weight: bold;">=</div>
-                    <div class="lora-result" style="width: 140px; height: 140px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 13px; text-align: center; opacity: 0; animation: loraFadeIn 1s 1.5s forwards; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);">
-                        Custom Model<br/><span style="font-size: 18px;">175.5B</span><br/>params
+                    <div style="font-size: 32px; color: #0a0a0a; font-weight: bold;">=</div>
+                    <div class="lora-result" style="width: 140px; height: 140px; background: #10b981; border: 3px solid #0a0a0a; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: bold; color: #ffffff; font-size: 13px; text-align: center; box-shadow: 4px 4px 0 #0a0a0a; line-height: 1.4;">
+                        <div>Custom Model</div>
+                        <div style="font-size: 28px; font-weight: 800; margin: 4px 0;">175.5B</div>
+                        <div>params</div>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 20px; padding: 10px 20px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; border-radius: 8px; display: inline-block; font-size: 13px; font-weight: 600;">
+                <div style="text-align: center; margin-top: 20px; padding: 12px 24px; background: #8b5cf6; color: #ffffff; border: 3px solid #0a0a0a; display: inline-block; font-size: 13px; font-weight: 700; box-shadow: 4px 4px 0 #0a0a0a;">
                     Only 0.3% of parameters trained!
                 </div>
             `;
